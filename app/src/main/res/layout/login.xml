@@ -9,7 +9,8 @@
         android:layout_width="wrap_content"
         android:layout_height="100dp"
         android:id="@+id/Structure"
-        ></FrameLayout>
+        >
+    </FrameLayout>
 
     <TextView
         android:layout_width="wrap_content"
@@ -37,9 +38,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:inputType="textPersonName"
-            android:text="Name"
+            android:hint= "@string/login_email"
             android:ems="10"
-            android:id="@+id/name_text" />
+            android:id="@+id/login_email" />
     </LinearLayout>
 
     <LinearLayout
@@ -59,7 +60,7 @@
             android:layout_height="wrap_content"
             android:inputType="textPassword"
             android:ems="10"
-            android:id="@+id/password_text"
+            android:id="@+id/login_password"
             android:text="Password" />
     </LinearLayout>
 
@@ -67,12 +68,14 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:text="SIGN IN"
+        android:onClick="signIn"
         android:id="@+id/sign_in" />
 
     <Button
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:text="SIGN UP"
+        android:onClick="signUp"
         android:id="@+id/sign_up" />
 
 </LinearLayout>

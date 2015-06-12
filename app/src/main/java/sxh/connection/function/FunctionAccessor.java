@@ -1,11 +1,13 @@
-package sxh.connection_mypart.function;
+package sxh.connection.function;
 
+import android.content.ContentResolver;
 import android.content.Intent;
 
-import sxh.connection_mypart.data.*;
+import sxh.connection.data.*;
 
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 /**
  * Created by Eleanor on 2015/5/23.
@@ -101,9 +103,18 @@ public interface FunctionAccessor {
     Boolean set_card_address(String address);
     Boolean set_card_birthday(Date birthday);
 
+    /**
+     * search need to implement
 
+    List<CardInfo> get_cards_by_name(String name);
+    List<CardInfo> get_cards_by_phone_number(String phone);
+    List<CardInfo> get_cards_by_email(String email);
+    */
 
 /** functions */
     Intent call_number(String number);
     Intent send_message(String number, String msg);
+    Intent send_email(String address, String subject, String text);
+    List<CardInfo> get_phone_contact(ContentResolver resolver);
+    List<CardInfo> get_SIM_contact(ContentResolver resolver);
 }

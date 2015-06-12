@@ -1,11 +1,16 @@
-package sxh.connection_mypart.activity;
+package sxh.connection.activity;
 
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.EditText;
+import android.content.Intent;
 
-import sxh.connection_mypart.R;
+
+import sxh.connection.R;
+import sxh.connection.function.*;
 
 
 public class LoginActivity extends Activity {
@@ -36,5 +41,25 @@ public class LoginActivity extends Activity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    //called when the user pushed sign in button
+    public void signIn(View view) {
+        //
+        FunctionAccessor fa = new FunctionImpl();
+        EditText email = (EditText) findViewById(R.id.login_email);
+        EditText password = (EditText) findViewById(R.id.login_password);
+        String email_str = email.getText().toString();
+        String password_str = password.getText().toString();
+        // if(fa.user_login(email_str,password_str)) {
+        Intent intent = new Intent(this, CardHolderActivity.class);
+        startActivity((intent));
+        //  }
+    }
+
+    //called when user pushed sign up button
+    public void signUp(View view) {
+        Intent intent = new Intent(this, SignUpActivity.class);
+        startActivity(intent);
     }
 }

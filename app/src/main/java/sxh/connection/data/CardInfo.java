@@ -1,4 +1,4 @@
-package sxh.connection_mypart.data;
+package sxh.connection.data;
 
 import java.util.ArrayList;
 import java.util.Date;
